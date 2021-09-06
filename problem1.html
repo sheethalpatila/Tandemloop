@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    
+    <form>
+        1st Number : <input type="text" id="firstNumber" /><br>
+        2nd Number: <input type="text" id="secondNumber" /><br>
+
+        <input type="button" onClick="sum()" Value="addition" />
+        <input type="button" onClick="sub()" Value="substraction" />
+        <input type="button" onClick="multiplyBy()" Value="Multiply" />
+        <input type="button" onClick="divideBy()" Value="Divide" />
+        </form>
+        <p>The Result is : <br>
+        <span id = "result"></span>
+        </p>
+
+        <script>
+
+function sum(){
+    a=Number(document.getElementById("firstNumber").value);
+b=Number(document.getElementById("secondNumber").value);
+c= a + b;
+document.getElementById("result").innerHTML= c;
+
+}
+function sub(){
+    a=document.getElementById("firstNumber").value;
+    b= document.getElementById("secondNumber").value;
+    document.getElementById("result").innerHTML = a-b;
+}
+            function multiplyBy()
+{
+        a = document.getElementById("firstNumber").value;
+        b = document.getElementById("secondNumber").value;
+        document.getElementById("result").innerHTML = a*b;
+}
+
+function divideBy() 
+{ 
+        a = document.getElementById("firstNumber").value;
+        b = document.getElementById("secondNumber").value;
+document.getElementById("result").innerHTML = a/b;
+}
+        </script>
+</body>
+</html>

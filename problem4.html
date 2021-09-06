@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   
+
+
+<script>
+
+    let ans = [];
+   
+    function countSieve(arr)
+    {
+        let MAX = arr[0];
+        for (let i = 1; i < arr.length; i++)
+            MAX = Math.max(arr[i], MAX);
+        let cnt = Array.from({length: MAX + 1}, (_, i) => 0); 
+        ans = Array.from({length: MAX + 1}, (_, i) => 0);
+   
+        for (let i = 0; i < arr.length; ++i)
+            ++cnt[arr[i]];
+        for (let i = 1; i <= MAX; ++i)
+            for (let j = i; j <= MAX; j += i)
+                ans[i] += cnt[j];
+        return;
+    }
+   
+    function countMultiples(k)
+    {
+        return ans[k];
+    }
+        let arr = [ 2, 4, 9, 15, 21, 20,4,2,6,5,7 ];
+        countSieve(arr);
+        for (i=1 ; i<=9 ; i++){
+        document.write(i + ":");
+        document.write(  countMultiples(i) + "<br/>");
+        }
+ 
+
+
+    </script>
+</body>
+</html>
